@@ -128,11 +128,16 @@ body{
 }
 
 .navigation:hover{
-    background-color: #344955;
+    background-color: rgb(38, 38, 38);
     cursor: pointer;
 }
 
-.activenavigation{
+.navigationactive{
     background-color: black;
+    color: white;
+}
+
+.navigationactive:hover{
+    background-color: rgb(38, 38, 38);
     color: white;
 }
