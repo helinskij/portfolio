@@ -132,6 +132,7 @@ body{
     cursor: pointer;
 }
 
-.navigation:active{
-    
+.activenavigation{
+    background-color: black;
+    color: white;
 }
