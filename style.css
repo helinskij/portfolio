@@ -65,7 +65,7 @@ body{
 .info{
     border: 5px solid black;
     border-radius: 30px;
-    width: 16%;
+    width: 12%;
     height: 60%;
     box-shadow: 5px 5px 5px black;
     margin-right: 10px;
@@ -74,7 +74,7 @@ body{
 .main{
     border: 5px solid black;
     border-radius: 30px;
-    width: 50%;
+    width: 60%;
     height: 60%;
     box-shadow: 5px 5px 5px black;
 }
@@ -140,4 +140,19 @@ body{
 .navigationactive:hover{
     background-color: rgb(38, 38, 38);
     color: white;
+}
+
+.maincontent{
+    font-size: 60px;
+    margin:8%;
+    text-align: center;
+}
+
+.nonactive{
+    display: none;
+}
+
+.contact{
+    margin: 50%;
+    justify-content: center;
 }
