@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Example projects array
     const projects = [
-        { title: "Portfolio Website", description: "The exact portfolio you are looking at ;)" },
+        { title: "Portfolio Website", description: "The exact portfolio you are looking at ;)",},
         { title: "TO-DO app", description: "Simple to-do app created with html, css and javascript" },
         { title: "Calculator app", description: "Classic, a calculator app created with html, css and javascript" },
+        { title: "Bank management system", description: "Small Java project using OOP" },
     ];
 
     // Populate projects
@@ -29,8 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
         about: `
             <h2>About Me</h2>
             <p>
-                I'm a ITS Help Desk Technician since August 2024 and a Computer Science student. I enjoy solving problems and 
-                constantly learning new technologies. 
+                I'm a ITS Help Desk Technician and a Computer Science student. I enjoy solving problems, constantly learning new
+                 technologies and coding.
+                <br><br>Languages I know: HTML, CSS, JavaScript, Java, Python
+                <br>I also know basics for: PHP, MYSQL, C++, C
             </p>
         `,
         projects: `
@@ -40,8 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
         contact: `
             <h2>Contact Me</h2>
             <p>
-                Fill out the form to contact me here<br>
-                I will get back to you as soon as possible!
+                Fill out the form and I will get back to you as soon as possible! <br>
+                You can also find me here:
+                 
             </p>
             <ul>
                 <section id="contact-form">
