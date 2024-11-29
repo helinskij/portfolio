@@ -120,7 +120,7 @@ body {
 }
 
 .main-content section {
-    max-width: 900px;
+    max-width: 800px;  /* Change size of main content*/
     margin: 0 auto;
     background: #1e1e1e;
     padding: 50px;
