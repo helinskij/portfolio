@@ -91,7 +91,7 @@ body {
     display: flex;
     gap: 30px; /* Keeps buttons evenly spaced */
     margin-left: auto; /* Pushes buttons to the right */
-    margin-right: 50px; /* Adds a buffer from the edge */
+    margin-right: 65px; /* Adds a buffer from the edge */
 }
 
 .nav-right button {
