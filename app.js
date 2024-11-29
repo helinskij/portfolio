@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2>Contact Me</h2>
             <p>
                 Fill out the form and I will get back to you as soon as possible! <br>
-                You can also find me here:
+                You can also email me directly here:
+                contact@jakubhelinski.com
                  
             </p>
             <ul>
@@ -85,6 +86,26 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 projectsContainer.innerHTML = ""; // Clear projects if navigating away
             }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navRight = document.querySelector(".nav-right");
+    const navButtons = document.querySelectorAll(".nav-right button");
+
+    // Toggle menu visibility
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active"); // Animate hamburger
+        navRight.classList.toggle("mobile-visible"); // Show/hide menu
+    });
+
+    // Hide menu when a button is clicked
+    navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            navRight.classList.remove("mobile-visible"); // Hide menu
+            hamburger.classList.remove("active"); // Reset hamburger animation
         });
     });
 });

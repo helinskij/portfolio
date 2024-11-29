@@ -247,39 +247,127 @@ body {
     background-color: #04471c;
 }
 
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Positioned on the right */
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 3px; /* Rounded edges */
+    transition: all 0.3s ease;
+}
+
+/* Animation for Active Hamburger Menu */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Top bar becomes diagonal */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Middle bar disappears */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar becomes diagonal */
+}
+
+/* Mobile Menu (Hidden by Default) */
+.nav-right {
+    display: flex;
+    flex-direction: row; /* Default horizontal layout */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 30px; /* Spacing between buttons */
+    opacity: 1; /* Visible by default */
+    pointer-events: auto;
+    position: static; /* Normal flow for large screens */
+    background: none;
+    width: auto;
+    transition: none; /* No animation for large screens */
+}
+
+.nav-right.mobile-visible {
+    transform: translateY(0); /* Make it visible */
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Allow interaction */
+}
+
 /* General Mobile Adjustments */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
     /* Navigation Bar */
     .navigation {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 0;
+        position: relative;
+        width: 100%; 
     }
 
+
     .nav-left {
-        width: 100%; /* Full width for the name */
-        text-align: center;
-        margin-bottom: 10px;
+        flex: 0;
+        text-align: left;
+        margin: 0;
+        margin-left: 20px;
     }
 
     .nav-left h1 {
         font-size: 18px;
-        margin: 0; /* Remove margin for better fit */
     }
 
     .nav-right {
-        width: 80%; /* Full width for buttons */
-        display: flex;
-	
+        position: absolute;
+        top: 75px;
+        right: 0;
         flex-direction: column; /* Stack buttons vertically */
-        gap: 10px;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        width: 100%;
+        background: #1a1a1a; /* Background for mobile menu */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        margin: 0;
+    }
+
+    .nav-right.mobile-visible {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .nav-right button {
-        width: 100%; /* Buttons span the entire width */
-        font-size: 16px; /* Maintain readability */
-        padding: 12px; /* Larger padding for touch devices */
-        text-align: center;
+        width: 100%; /* Full-width buttons for mobile */
+        padding: 15px 0;
+        border: none;
+        border-bottom: 1px solid #333;
+        font-size: 16px;
+    }
+
+    .nav-right button {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu on mobile */
     }
 
     /* Main Content */
@@ -317,6 +405,28 @@ body {
     }
 }
 
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-right {
+        flex-direction: row; /* Horizontal layout for larger screens */
+        position: static; /* Normal flow */
+        opacity: 1; /* Fully visible */
+        pointer-events: auto;
+        width: auto;
+        background: none; /* No background for larger screens */
+    }
+
+    .nav-right button {
+        padding: 8px 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 25px;
+        font-size: 16px;
+        margin-right: 0;
+    }
+}
 /* Smaller Phones (max-width: 480px) */
 @media (max-width: 480px) {
     .nav-left h1 {
