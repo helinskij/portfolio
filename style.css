@@ -60,7 +60,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px; /* Adjust spacing to prevent overflow */
+    padding: 0 30px;
     width: 100%;
     background-color: #1a1a1a;
     height: 75px;
@@ -87,7 +87,6 @@ body {
     color: inherit;
 }
 
-/* Buttons on the Right */
 .nav-right {
     display: flex;
     gap: 30px; /* Keeps buttons evenly spaced */
@@ -121,7 +120,7 @@ body {
 }
 
 .main-content section {
-    max-width: 900px; /* Enlarged content box */
+    max-width: 900px;
     margin: 0 auto;
     background: #1e1e1e;
     padding: 50px;
@@ -246,3 +245,99 @@ body {
 #contact-form button:hover {
     background-color: #04471c;
 }
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Navigation Bar */
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-left {
+        width: 100%; /* Full width for the name */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-left h1 {
+        font-size: 18px;
+        margin: 0; /* Remove margin for better fit */
+    }
+
+    .nav-right {
+        width: 80%; /* Full width for buttons */
+        display: flex;
+	
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .nav-right button {
+        width: 100%; /* Buttons span the entire width */
+        font-size: 16px; /* Maintain readability */
+        padding: 12px; /* Larger padding for touch devices */
+        text-align: center;
+    }
+
+    /* Main Content */
+    .main-content section {
+        padding: 30px;
+        margin: 20px;
+        max-width: 90%; /* Shrink content box on smaller screens */
+    }
+
+    /* Projects Section */
+    .projects-container {
+        flex-direction: column;
+        gap: 15px; /* More gap between stacked cards */
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%; /* Make cards full-width for mobile */
+        max-width: none;
+    }
+
+    /* Contact Form */
+    #contact-form {
+        padding: 20px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 12px; /* Smaller text inputs for mobile */
+    }
+
+    #contact-form button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Smaller Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .nav-left h1 {
+        font-size: 16px;
+    }
+
+    .nav-right button {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .main-content section {
+        padding: 20px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 11px;
+    }
+
+    #contact-form button {
+        font-size: 12px;
+    }
+}
+
