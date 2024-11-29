@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Example projects array
     const projects = [
-        { title: "Portfolio Website", description: "The exact portfolio you are looking at ;)",},
-        { title: "TO-DO app", description: "Simple to-do app created with html, css and javascript" },
-        { title: "Calculator app", description: "Classic, a calculator app created with html, css and javascript" },
-        { title: "Bank management system", description: "Small Java project using OOP" },
+        { title: "Portfolio Website", description: "The exact portfolio you are looking at ;)"},
+        { title: "TO-DO app", description: "Simple to-do app created with html, css and javascript", link: "https://github.com/helinskij/To-Do-app"},
+        { title: "Calculator app", description: "Classic, a calculator app created with html, css and javascript", link: "https://github.com/helinskij/Calculator"},
+        { title: "Bank management system", description: "Small Java project using OOP", link: "https://github.com/helinskij/bank-management-system" },
+        { title: "More coming soon...", description: ""},
     ];
 
     // Populate projects
@@ -21,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
             `;
+            projectCard.addEventListener('click', ()=>{
+                if(project.link){
+                    window.open(project.link, '_blank');
+                }
+            })
             projectsContainer.appendChild(projectCard);
         });
     }
