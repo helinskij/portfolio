@@ -55,6 +55,23 @@ body {
     color: #e0e0e0;
 }
 
+/* .footer-mountains {
+    position: fixed;
+    bottom: -600px;
+    width: 100%;
+    height: 2000px; /* Adjust height as needed */       /*will be added in a future
+    background: url('mountains.png') no-repeat bottom center;
+    background-size: cover;
+    pointer-events: none; /* Ensure it doesn’t interfere with clicks above */      /*  <- del that
+    z-index: 0;
+} 
+*/
+/* Ensuring Content is Above the Mountains */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
 /* Navigation Bar */
 .navigation {
     display: flex;
