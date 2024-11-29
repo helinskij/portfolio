@@ -1,56 +1,80 @@
-let button1 = document.querySelector('#button1');
-let button2 = document.querySelector('#button2');
-let button3 = document.querySelector('#button3');
-let button4 = document.querySelector('#button4');
-let aboutme = document.querySelector('#aboutme');
-let projects = document.querySelector('#projects');
-let experience = document.querySelector('#experience');
-let contact = document.querySelector('#contact');
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".nav-right button");
+    const contentSection = document.getElementById("content-section");
+    const projectsContainer = document.getElementById("projects-container");
 
+    // Example projects array
+    const projects = [
+        { title: "Portfolio Website", description: "The exact portfolio you are looking at ;)" },
+        { title: "TO-DO app", description: "Simple to-do app created with html, css and javascript" },
+        { title: "Calculator app", description: "Classic, a calculator app created with html, css and javascript" },
+    ];
 
-button1.addEventListener('click', function(){
-    
-    button1.classList.add('navigationactive');
-    button2.classList.remove('navigationactive');
-    button3.classList.remove('navigationactive');
-    button4.classList.remove('navigationactive');
-    aboutme.classList.remove('nonactive');
-    projects.classList.add('nonactive');
-    experience.classList.add('nonactive');
-    contact.classList.add('nonactive');
-})
+    // Populate projects
+    function loadProjects() {
+        projectsContainer.innerHTML = ""; // Clear existing projects
+        projects.forEach(project => {
+            const projectCard = document.createElement("div");
+            projectCard.classList.add("project-card");
+            projectCard.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+            `;
+            projectsContainer.appendChild(projectCard);
+        });
+    }
 
-button2.addEventListener('click', function(){
-    button2.classList.add('navigationactive');
-    button1.classList.remove('navigationactive');
-    button3.classList.remove('navigationactive');
-    button4.classList.remove('navigationactive');
-    projects.classList.remove('nonactive');
-    aboutme.classList.add('nonactive');
-    experience.classList.add('nonactive');
-    contact.classList.add('nonactive');
-})
+    // Content for sections
+    const sections = {
+        about: `
+            <h2>About Me</h2>
+            <p>
+                I'm a ITS Help Desk Technician since August 2024 and a Computer Science student. I enjoy solving problems and 
+                constantly learning new technologies. 
+            </p>
+        `,
+        projects: `
+            <h2>My Projects</h2>
+            <p>Here are some of my latest projects:</p>
+        `,
+        contact: `
+            <h2>Contact Me</h2>
+            <p>
+                Fill out the form to contact me here<br>
+                I will get back to you as soon as possible!
+            </p>
+            <ul>
+                <section id="contact-form">
+        
+        <form action="https://formspree.io/f/mnnqgyyn" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-button3.addEventListener('click', function(){
-   
-    button3.classList.add('navigationactive');
-    button2.classList.remove('navigationactive');
-    button1.classList.remove('navigationactive');
-    button4.classList.remove('navigationactive');
-    experience.classList.remove('nonactive');
-    aboutme.classList.add('nonactive');
-    projects.classList.add('nonactive');
-    contact.classList.add('nonactive');
-})
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
 
-button4.addEventListener('click', function(){
-    
-    button4.classList.add('navigationactive');
-    button2.classList.remove('navigationactive');
-    button3.classList.remove('navigationactive');
-    button1.classList.remove('navigationactive');
-    contact.classList.remove('nonactive');
-    aboutme.classList.add('nonactive');
-    experience.classList.add('nonactive');
-    projects.classList.add('nonactive');
-})
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        </section>
+            </ul>
+        `,
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const section = button.getAttribute("data-section");
+            contentSection.innerHTML = sections[section] || "Content not available.";
+            if (section === "projects") {
+                loadProjects(); // Load projects when the "Projects" button is clicked
+            } else {
+                projectsContainer.innerHTML = ""; // Clear projects if navigating away
+            }
+        });
+    });
+});
