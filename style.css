@@ -55,17 +55,17 @@ body {
     color: #e0e0e0;
 }
 
-/* .footer-mountains {
+.footer-mountains {
     position: fixed;
-    bottom: -600px;
+    bottom: -1280px;
     width: 100%;
-    height: 2000px; /* Adjust height as needed */       /*will be added in a future
-    background: url('mountains.png') no-repeat bottom center;
+    height: 2000px; /* Adjust height as needed */       
+    background: url('mountains.png') bottom center;
     background-size: cover;
-    pointer-events: none; /* Ensure it doesn’t interfere with clicks above */      /*  <- del that
+    pointer-events: none; /* Ensure it doesn’t interfere with clicks above */      
     z-index: 0;
 } 
-*/
+
 /* Ensuring Content is Above the Mountains */
 .main-content {
     position: relative;
