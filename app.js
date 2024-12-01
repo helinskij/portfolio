@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         about: `
             <h2>About Me</h2>
             <p>
-                I'm a ITS Help Desk Technician and a Computer Science student. I enjoy solving problems, constantly learning new
-                 technologies and coding.
+                Between work in IT and classes I focus on coding and exploring the technological world, while chasing a dream to 
+                become a real world programmer or cybersecurity specialist. Here is some information about what I use or learned 
+                over the years
                 <br><br>Languages I know: HTML, CSS, JavaScript, Java, Python
                 <br>I also know basics for: PHP, MYSQL, C++, C
             </p>
